@@ -1,4 +1,3 @@
-# cynthiasdl.github.io
 # **Colors in Flags**
 
 #### **Colors in Flags** is a project that was created during my time at the [Lede program](https://ledeprogram.com).
