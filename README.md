@@ -118,5 +118,5 @@ df_continents = pd.read_excel('flag_colors_continente.xlsx')
 ```
 df_continents = pd.read_excel('flag_colors_continente.xlsx')
 ```
-## **Now the data was ready to be analysed**
+### **Now the data was ready to be analysed**
 
