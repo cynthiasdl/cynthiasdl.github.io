@@ -5,10 +5,10 @@ function checkAnswer(answer) {
 
     if (answer === correctAnswer) {
         resultDiv.innerHTML = "Correct!";
-        flagDiv.innerHTML = '<img src="./html_flags_and_colors/flag-antarctica.png" alt="Antarctic Flag">';
+        flagDiv.innerHTML = '<img src="./images/flag-antarctica.png" alt="Antarctic Flag">';
     } else {
         resultDiv.innerHTML = "Wrong! It's blue and white";
-        flagDiv.innerHTML = '<img src="./html_flags_and_colors/flag-antarctica.png" alt="Antarctic Flag">';
+        flagDiv.innerHTML = '<img src="./images/flag-antarctica.png" alt="Antarctic Flag">';
     }
 
     // Zeige die Flagge an, unabhängig von der Antwort
