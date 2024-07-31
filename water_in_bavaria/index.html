@@ -4,7 +4,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Story template</title>
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <title>Tapwater-Tea?</title>
+
+
+    <link href="CSS/scrolly-styles.css" rel="stylesheet">
+    <script src="https://unpkg.com/intersection-observer@0.5.1/intersection-observer.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollama/3.2.0/scrollama.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.3.0/d3.min.js"></script>
 
     <!-- Google fonts -->
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,6 +19,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+
+
+
     <style>
         body {
             margin: 0;
@@ -30,7 +40,7 @@
         }
 
         a {
-            color: #f05349;
+            color: #0a1263;
         }
 
         .footer {
@@ -78,6 +88,7 @@
             line-height: 1.6;
             margin: 0;
             padding-bottom: 1.2em;
+            text-align: justify;
         }
 
         ul {
@@ -106,8 +117,7 @@
                 padding-right: 0.5em;
             }
         }
-    </style>
-    <style>
+    
         .with-image-bg,
         .with-video-bg {
             position: relative;
@@ -145,63 +155,66 @@
             object-position: bottom;
         }
 
+        /* JavaScript for Minerals */
 
-        /* Scrolly */
-    
-
-        .scrolly {
-            display: flex;
-            flex-direction: row;
-            height: 100vh;
-            margin: 0;
-            overflow: hidden;
+        .ring-text {
+            font-size: 20px;
+            fill: white;
         }
-        .scrolly_text {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px;
-            background-color: white;
-            scrollbar-width: none; /* Für Firefox */
-            -ms-overflow-style: none; /* Für Internet Explorer und Edge */
-        }
-        .text::-webkit-scrollbar {
-            display: none; /* Für Chrome, Safari und Opera */
-        }
-        .images {
-            flex: 1;
-            overflow-y: auto; /* Ermöglicht das Scrollen im Bildbereich */
-            scrollbar-width: none; /* Für Firefox */
-            -ms-overflow-style: none; /* Für Internet Explorer und Edge */
-            position: relative;
-            background-color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .images::-webkit-scrollbar {
-            display: none; /* Für Chrome, Safari und Opera */
-        }
-        .images img {
-            position: absolute;
-            max-width: 100%;
-            max-height: 100%;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .images img.active {
-            opacity: 1;
-        }
-        .section {
-            padding: 200px 0;
-        }
-        .content-box {
-            background-color: #e0e0e0;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 50px;
+        .glass-text {
+            font-size: 32px;
+            fill: #16627A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
         }
 
-          /* Scrolly */
+        .glass-text2 {
+            font-size: 32px;
+            fill: #16627A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .glass-text3 {
+            font-size: 32px;
+            fill: #16627A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .hover-text {
+            font-size: 16px;
+            fill: #16627A;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        ul.custom-list {
+            list-style: none;
+            padding-left: 0;
+            text-align: justify;
+        }
+
+
+
+
+        /* Abfrage*/
+
+        .container {
+            max-width: 600px;
+            margin: auto;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+        button {
+            padding: 8px;
+            background-color: #6DB9C3;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #16627A;
+        }
 
     </style>
 </head>
@@ -210,98 +223,205 @@
 
     <div class="header with-video-bg">
         <div class="video-background">
-            <video src="tea_video.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
+            <video src="images/tea_video.mp4" preload="auto" tabindex="0" playsinline autoplay loop muted></video>
         </div>
         <div class="content">
             <h1>Is your water too hard for a good cup of tea?</h1>
-            <p class="subhead"> According to... xx % of the Germans enjoy at least one cup of tea everyday. 
-                Yet the quality of water effects how a freshly brewed tea tastes. tabwater?
-                wide</p>
+            <p class="subhead"> According to <a href="https://www.lebensmittelmagazin.de/ernaehrung-gesundheit/20200915-mehr-tee-denn-je-so-viel-tee-trinken-die-deutschen/">Lebensmittelmagazin</a>
+                around 129 million cups of tea are consumed in Germany every day. 
+                Yet the water hardness can affect how the tea tastes. 
+                An analysis for Bavarian tea lovers and an explanation of why your 
+                favourite tea tastes different elsewhere.
+            </p>
         </div>
     </div>
+    
     <div class="content">
         <div class="byline">
             <p>By <a href="Cynthia Seidel">Cynthia Seidel</a></p>
         </div>
-        <p>We had to create another <code>class="content"</code> before the byline/after the header so everything would
-            line up okay.</p>
-        <p>You can use this for things other than headers if you want, too.</p>
+        <p> Tea water is an important factor when making tea. For perfect tea, the water should not simply 
+            be poured boiling over the leaves (with the exception of green tea, of course). Ideally, it should 
+            also be rich in minerals and oxygen, but low in calcium. However, even though tap water in Germany is 
+            generally of high quality, its hardness is what can affect the flavour of tea. For water hardness is the 
+            amount of dissolved minerals in the water.
+        </p>
+
+        <div class="content">
+            <svg width="600" height="600"></svg>
+            <script src="JS/script.js"></script>
+            <p></p>
+        </div>
+
+        <h3>How can water be hard?</h3>
+
+        <p> Due to the 
+            <a href=”https://www.usgs.gov/special-topics/water-science-school/science/hardness-water#:~:text=The%20simple%20definition%20of%20water,minerals%2C%20largely%20calcium%20and%20magnesium.”> U.S. Geological Survey</a> 
+            water hardness is "not a health concern". The USGS however also describes it as a "nuisance", since it not 
+            only effects the taste of your favorite tea. The minerals can also build up in pipes, faucets, and 
+            water heaters and makes soaps or detergents work less well.
+        </p>
+
+        <p> In Germany tap water is categorized into three degrees of hardness. It is measured in dH refering to 
+            "Grad <strong>d</strong>eutscher <strong>H</strong>ärte" which translates to "degrees of German hardness". 
+            In general, hard water is more common in those regions where underground water sources have more dissolved minerals.
+        </p>
+
+        <img src="images/table1.png">
+
+        <p> Tap water in Bavaria is obtained from around 8,400 water extraction plants, including 4,300 wells, 
+            4,100 springs and three surface water utilisation plants (reservoirs, lake and river water), reports 
+            <a href="https://wasser-bayern.de/trinkwasser/">Wasser Bayern</a>.
+            The drinking water extracted from these plants is therefore usually supplied to the municipalities without further 
+            treatment. The latter are responsible for the administration. 
+        </p>
+
+        
+        <h3>The water in Bavaria is hard</h3>
+
+        <img src="images/chart_germany.png" alt="water hardness in Germany">
+
+        <p></p>
+        <p> On average, Bavaria has some of the hardest tap water in Germany. However, this can vary from region to 
+            region. Even in the south of Germany, which tends to have harder water, there are towns and communities where - 
+            if boiling water came out of the tap - tea could be brewed straight from the tap and still unfold all its 
+            flavours as it should.
+        </p>
+
     </div>
+
+    
+
+    <div class="content">
+        <section id="scrolly-images" class="scrolly-container">
+            <div class="sticky-thing">
+                <img src="images/bild1.png">
+            </div>
+
+            <div class="steps-container">
+                <div class="step" id="step1">
+                
+                    <p>As the data for water quality had to be requested from each of the over <strong>2,232 supply institutes</strong>, 
+                        it was not possible to obtain data for all regions in Bavaria. All data shown here is taken from the directory 
+                        <a href="https://www.wasserhaerte.net">Wasserhärte.net</a> where private households can enter the value for their home zip code.</p>
+
+            
+                </div>
+
+                <div class="step" id="step2">
+                    
+                    <p>According to <a href="https://wasserhaerte.io/by/">Wasserhärte.io</a> <strong>75.9 %</strong> of cities in Bavaria have hard water. 
+                    which is also visible in the data provided by the directory.</p>
+                    
+                </div>
+
+                <div class="step" id="step3">
+                
+                <p>In contrast, only <strong>13.6 %</strong> of households in Bavaria have medium-hard water and therefore 
+                    1.5 to 2.5 millimoles of calcium carbonate per litre in their tap water.</p>
+                
+                </div>
+
+                <div class="step" id="step4">
+                    <p>Very few households in Bavaria have soft water and therefore a very low quantity of dissolved cations. 
+                        If these are too high, they are responsible for the fact that the flavour of coffee and tea cannot fully develop.
+
+                    </p>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    
+  <script>
+
+   
+    (() => {
+      const scroller = scrollama()
+
+      scroller
+        .setup({
+          parent: document.querySelector("#scrolly-images"),
+          step: ".step",
+          offset: 0.5,
+          debug: false,
+        })
+        .onStepEnter(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepin", { detail: { direction: direction } })
+          element.dispatchEvent(event)
+        })
+        .onStepExit(function ({ element, index, direction }) {
+          const event = new CustomEvent("stepout", { detail: { direction: direction } })
+          if (direction === "up" && element.previousElementSibling) {
+            const event = new CustomEvent("stepin", { detail: { direction: direction } })
+            element.previousElementSibling.dispatchEvent(event)
+          }
+        })
+
+      window.addEventListener("resize", scroller.resize)
+    })()
+
+   
+    d3.select("#step1").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/bild1.png")
+    })
+
+    d3.select("#step2").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/bild2.png")
+    })
+
+    d3.select("#step3").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/bild3.png")
+    })
+
+    d3.select("#step4").on('stepin', (e) => {
+      d3.select(e.target.closest(".scrolly-container")).select("img").attr("src", "images/bild4.png")
+    })
+
+  </script>
+
+
+<div class="container">
+    <h3>How hard is the water at home?</h3>
+    <label for="zipCode" style="font-size: smaller;">Enter your zip code:</label>
+    <input type="text" id="zipCode" placeholder="zip code">
+    <button onclick="getWaterHardness()">show water hardness</button>
+    <p id="result"></p>
+</div>
+
+<script>
+    async function getWaterHardness() {
+        const zipCode = document.getElementById('zipCode').value;
+        const response = await fetch('zip_code_abfrage.csv');
+        const data = await response.text();
+        
+        const lines = data.split('\n').slice(1);
+        let waterHardness = 'no data availiable';
+        console.log(data);
+
+
+        lines.forEach(line => {
+            const [, code, hardness] = line.split(';');
+            if (code === zipCode) {
+                waterHardness = parseFloat(hardness).toFixed(2);
+            }
+        });
+        console.log(waterHardness);
+        
+        document.getElementById('result').innerText = `water hardness (dh): ${waterHardness}`;
+    }
+</script>
+
+
+    
+    
+
     <div class="footer">
         <div class="content">
-            <p>You can find the code for this template <a href="https://github.com/jsoma/page-templates/">here</a>.
-                Delete these lines
-                when you use it, and don't forget to change the <code>title</code> tag!!!</p>
+            <p>You can find the code for this story <a href="https://github.com/cynthiasdl/cynthiasdl.github.io/tree/main/water_in_bavaria">here</a>.
         </div>
     </div>
 
-
-
-    <div class="scrolly">
-        <div class="scrolly_text" id="text">
-            <div class="section" data-image="image1">
-                <div class="content-box">
-                    <h2>Abschnitt 1</h2>
-                    <p>Dies ist der erste Abschnitt des Scrollytellings.</p>
-                </div>
-            </div>
-            <div class="section" data-image="image2">
-                <div class="content-box">
-                    <h2>Abschnitt 2</h2>
-                    <p>Dies ist der zweite Abschnitt des Scrollytellings.</p>
-                </div>
-            </div>
-            <div class="section" data-image="image3">
-                <div class="content-box">
-                    <h2>Abschnitt 3</h2>
-                    <p>Dies ist der dritte Abschnitt des Scrollytellings.</p>
-                </div>
-            </div>
-            <!-- Weitere Abschnitte hinzufügen -->
-        </div>
-        <div class="images" id="images">
-            <img id="image1" src="bild1.jpg" alt="Bild 1">
-            <img id="image2" src="bild2.jpg" alt="Bild 2">
-            <img id="image3" src="bild3.jpg" alt="Bild 3">
-            <!-- Weitere Bilder hinzufügen -->
-        </div>
-    
-        <script>
-            const sections = document.querySelectorAll('.section');
-            const images = document.querySelectorAll('.images img');
-            const textContainer = document.getElementById('text');
-            const imagesContainer = document.getElementById('images');
-    
-            function activateImage(section) {
-                const imageId = section.getAttribute('data-image');
-                images.forEach(img => img.classList.remove('active'));
-                document.getElementById(imageId).classList.add('active');
-            }
-    
-            function syncScroll(source, target) {
-                const scrollPercentage = source.scrollTop / (source.scrollHeight - source.clientHeight);
-                target.scrollTop = scrollPercentage * (target.scrollHeight - target.clientHeight);
-            }
-    
-            textContainer.addEventListener('scroll', () => {
-                let index = 0;
-                while (index < sections.length && sections[index].getBoundingClientRect().top < window.innerHeight / 2) {
-                    index++;
-                }
-                if (index > 0) {
-                    activateImage(sections[index - 1]);
-                }
-                syncScroll(textContainer, imagesContainer);
-            });
-    
-            imagesContainer.addEventListener('scroll', () => {
-                syncScroll(imagesContainer, textContainer);
-            });
-    
-            // Initiales Bild setzen
-            activateImage(sections[0]);
-        </script>
-    </div>
 
 </body>
 
